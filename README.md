@@ -27,9 +27,9 @@ The environment consists of three virtual machines communicating over an isolate
 ### Phase 1: Virtual Networking & Interface Setup
 - Configured a VirtualBox **Host-Only Network** adapter (`192.168.56.X`).
 - Assigned static/dynamic IPs inside the private range:
-  - **Kali Linux IP:** `[Insert Kali IP here, e.g., 192.168.56.102]`
-  - **Ubuntu IDS Sensor IP:** `[Insert Ubuntu IP here, e.g., 192.168.56.103]`
-  - **Metasploitable 2 IP:** `[Insert Metasploitable IP here, e.g., 192.168.56.101]`
+  - **Kali Linux IP:** `[192.168.56.102]`
+  - **Ubuntu IDS Sensor IP:** `[192.168.56.103]`
+  - **Metasploitable 2 IP:** `[192.168.56.101]`
 
 ### Phase 2: Installing and Tuning Suricata
 1. Installed Suricata on the Ubuntu Sensor Node:
@@ -53,7 +53,7 @@ The environment consists of three virtual machines communicating over an isolate
 From the Kali Linux attacker terminal, a TCP SYN port scan with version detection was executed against the Metasploitable 2 server to generate reconnaissance traffic:
 
 ```bash
-sudo nmap -sS -sV [METASPLOITABLE_IP]
+sudo nmap -sS -sV [192.168.56.101]
 ```
 
 #### Results & Detection:
